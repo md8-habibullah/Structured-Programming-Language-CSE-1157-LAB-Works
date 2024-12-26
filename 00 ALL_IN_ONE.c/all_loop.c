@@ -12,14 +12,15 @@ void createDirectory(const char *path) {
 }
 
 // Function to write code to a file
-void writeCodeToFile(const char *filename, const char *code) {
+int writeCodeToFile(const char *filename, const char *code) {
     FILE *file = fopen(filename, "w");
     if (file == NULL) {
         perror("Failed to open file");
-        return;
+        return 0;
     }
     fprintf(file, "%s", code);
     fclose(file);
+    return 1;
 }
 
 // Function to check if the input string matches "I LOVE YOU" (case-insensitive)
@@ -37,7 +38,7 @@ int checkLoveYou(const char *input) {
 
 int main() {
     char id[100];
-    printf("Enter the folder ID (EX: CSE123456789): ");
+    printf("Enter the folder ID (EX: CSE123456789): >> ");
     scanf("%s", id);
 
     // Create the directory with the given ID
@@ -68,35 +69,44 @@ int main() {
     };
 
     // Write each code snippet to a separate file
+    int success = 1;
     for (int i = 0; i < sizeof(codeSnippets) / sizeof(codeSnippets[0]); i++) {
         char filename[100];
         snprintf(filename, sizeof(filename), "%s/code%d.c", id, i + 1);
-        writeCodeToFile(filename, codeSnippets[i]);
-    }
-
-    printf("Code files have been written to the folder: %s\n", id);
-
-    // Ask the user to say "I LOVE YOU" to finish the execution
-    char input[100];
-    while (1) {
-        printf("Say 'I LOVE YOU' to finish: ");
-        scanf(" %[^\n]s", input);
-        if (checkLoveYou(input)) {
+        if (!writeCodeToFile(filename, codeSnippets[i])) {
+            success = 0;
             break;
-        } else {
-            printf("Don't try clever. Say 'I LOVE YOU'\n");
         }
     }
 
-    // Get the current working directory
-    char cwd[1024];
-    if (getcwd(cwd, sizeof(cwd)) != NULL) {
-        char fullPath[1024];
-        snprintf(fullPath, sizeof(fullPath), "%s/%s", cwd, id);
-        printf("     ---LOVE YOU TOO--- \n Thank you! Execution finished.\n");
-        printf("Check this directory for all the code: %s\n", fullPath);
+    if (success) {
+        printf("Code files have been written to the folder: %s\n", id);
+
+        // Ask the user to say "I LOVE YOU" to finish the execution
+        char input[100];
+        while (1) {
+            printf("Say 'I LOVE YOU' to finish: >> ");
+            scanf(" %[^\n]s", input);
+            if (checkLoveYou(input)) {
+                break;
+            } else {
+                printf("Don't try clever. Say 'I LOVE YOU'\n");
+            }
+        }
+
+        // Get the current working directory
+        char cwd[1024];
+        if (getcwd(cwd, sizeof(cwd)) != NULL) {
+            char fullPath[1024];
+            snprintf(fullPath, sizeof(fullPath), "%s/%s", cwd, id);
+            printf("     ---LOVE YOU TOO--- \n");
+            printf("Thank you! Execution finished.\n");
+            printf("Check this directory for all the code: %s\n", fullPath);
+        } else {
+            perror("getcwd() error");
+        }
     } else {
-        perror("getcwd() error");
+        printf("Error: Failed to write all code files.\n");
     }
 
     return 0;
