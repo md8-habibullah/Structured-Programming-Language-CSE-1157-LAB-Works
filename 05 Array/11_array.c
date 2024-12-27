@@ -10,12 +10,10 @@ int main() {
         scanf("%d", &arrA[i]);
     }
 
-    // Copy in reverse order
     for (int i = 0, j = n - 1; i < n; i++, j--) {
         arrB[i] = arrA[j];
     }
 
-    // Print both arrays
     printf("Array A: ");
     for (int i = 0; i < n; i++) {
         printf("%d", arrA[i]);

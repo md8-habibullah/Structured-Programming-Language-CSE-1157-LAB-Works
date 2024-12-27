@@ -11,7 +11,7 @@ int main()
     int count = 0;
     for (int i = 0; i < n; i++)
     {
-        char c = tolower(arr[i]); // Convert to lowercase for case-insensitive check
+        char c = tolower(arr[i]); 
         if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
         {
             count++;
