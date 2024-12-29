@@ -4,7 +4,7 @@ int main() {
     char input;
 
     while (1) {
-        input = getchar();
+        input = getchar();   // scanf() dia kora jasse na, maybe for "char", SIR will explain more in class
         if (input == 'A') {
             break;
         }
