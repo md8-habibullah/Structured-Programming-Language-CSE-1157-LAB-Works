@@ -10,7 +10,7 @@ int main() {
         printf("Enter marks for student %d (A HW CT MT TF): ", i + 1);
         scanf("%f %f %f %f %f", &A, &HW, &CT, &MT, &TF);
 
-        float totalMarks = (A * 0.05) + (HW * 0.10) + (CT * 0.15) + (MT * 0.30) + (TF * 0.40);
+        float totalMarks = (A * 1.00) + (HW * 1.00) + (CT * 1.00) + (MT * 0.60) + (TF * 0.40);
 
         char grade;
 
