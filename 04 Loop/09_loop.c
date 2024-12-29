@@ -1,19 +1,5 @@
 #include <stdio.h>
 
-char calculateGrade(float totalMarks) {
-    if (totalMarks >= 90) return 'A';
-    else if (totalMarks >= 86) return 'A';
-    else if (totalMarks >= 82) return 'B';
-    else if (totalMarks >= 78) return 'B';
-    else if (totalMarks >= 74) return 'B';
-    else if (totalMarks >= 70) return 'C';
-    else if (totalMarks >= 66) return 'C';
-    else if (totalMarks >= 62) return 'C';
-    else if (totalMarks >= 58) return 'D';
-    else if (totalMarks >= 55) return 'D';
-    else return 'F';
-}
-
 int main() {
     int N;
     printf("Enter the number of students: ");
@@ -25,7 +11,20 @@ int main() {
         scanf("%f %f %f %f %f", &A, &HW, &CT, &MT, &TF);
 
         float totalMarks = (A * 0.05) + (HW * 0.10) + (CT * 0.15) + (MT * 0.30) + (TF * 0.40);
-        char grade = calculateGrade(totalMarks);
+
+        char grade;
+
+        if (totalMarks >= 90) grade = 'A';
+        else if (totalMarks >= 86) grade = 'A';
+        else if (totalMarks >= 82) grade = 'B';
+        else if (totalMarks >= 78) grade = 'B';
+        else if (totalMarks >= 74) grade = 'B';
+        else if (totalMarks >= 70) grade = 'C';
+        else if (totalMarks >= 66) grade = 'C';
+        else if (totalMarks >= 62) grade = 'C';
+        else if (totalMarks >= 58) grade = 'D';
+        else if (totalMarks >= 55) grade = 'D';
+        else grade = 'F';
 
         printf("Student %d: %c\n", i + 1, grade);
     }
