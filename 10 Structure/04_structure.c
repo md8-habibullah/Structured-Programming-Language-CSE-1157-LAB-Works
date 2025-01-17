@@ -15,4 +15,4 @@ int main() {
     printf("ID: %d\n", s.id);
     printf("CGPA: %f\n", s.cgpa);
     return 0;
-}
+}  
