@@ -1,27 +1,28 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int n;
-
     printf("Enter the size of the identity matrix: ");
     scanf("%d", &n);
 
-    int matrix[n][n];
+    int arr[n][n];
+    int i, j;
 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
             if (i == j) {
-                matrix[i][j] = 1;
+                arr[i][j] = 1;
             } else {
-                matrix[i][j] = 0;
+                arr[i][j] = 0;
             }
         }
     }
 
-    printf("Identity matrix:\n");
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            printf("%d ", matrix[i][j]);
+    printf("\nIdentity Matrix:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            printf("%d ", arr[i][j]);
         }
         printf("\n");
     }

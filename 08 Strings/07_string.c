@@ -1,20 +1,21 @@
 #include <stdio.h>
-#include <string.h>
 
-int main() {
+int main()
+{
     char str[100];
-    int i;
 
-    gets(str);
+    printf("Enter a string: ");
+    scanf("%[^\n]%*c", str);
 
-    for (i = 0; str[i] != '\0'; i++) {
+    for (int i = 0; str[i] != '\0'; i++) {
         if (str[i] >= 'a' && str[i] <= 'z') {
-            str[i] = str[i] - 32; // Convert to uppercase
+            str[i] = str[i] - 32; 
         } else if (str[i] >= 'A' && str[i] <= 'Z') {
-            str[i] = str[i] + 32; // Convert to lowercase
+            str[i] = str[i] + 32;
         }
     }
 
-    printf("%s\n", str);
+    printf("Toggled case string: %s\n", str);
+
     return 0;
 }

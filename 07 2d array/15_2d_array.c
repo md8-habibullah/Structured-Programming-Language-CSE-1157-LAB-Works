@@ -3,30 +3,17 @@
 int main()
 {
     int m, n;
+    printf("Enter m and n: ");
+    scanf("%d %d", &m, &n);
 
-    printf("Enter the number of rows (m): ");
-    scanf("%d", &m);
-    printf("Enter the number of columns (n): ");
-    scanf("%d", &n);
-
-    int matrix[m][n];
+    int arr[m][n];
+    int i, j, sum = 0;
 
     printf("Enter the elements of the matrix:\n");
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            scanf("%d", &matrix[i][j]);
-        }
-    }
-
-    int sum = 0;
-
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            sum += matrix[i][j];
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &arr[i][j]);
+            sum += arr[i][j];
         }
     }
 

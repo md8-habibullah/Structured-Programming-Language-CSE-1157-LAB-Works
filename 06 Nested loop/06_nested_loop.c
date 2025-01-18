@@ -2,23 +2,14 @@
 
 int main()
 {
-    int num = 3;
-    scanf("%d", &num);
-    for (int i = 1; i <= num; i++)
-    {
-        for (int j = 1; j <= num; j++)
-        {
-
-            if (j <= i)
-            {
-                printf("%d", j);
-            }
-            // else {
-            //     printf("_");
-            // }
+    int n, i, j;
+    printf("Enter n: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++) {
+        for (j = 1; j <= i; j++) {
+            printf("%d", j);
         }
         printf("\n");
     }
-
     return 0;
 }

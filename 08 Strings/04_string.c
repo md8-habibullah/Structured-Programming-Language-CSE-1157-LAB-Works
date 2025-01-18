@@ -1,22 +1,20 @@
 #include <stdio.h>
-#include <string.h>
 
-int main() {
+int main()
+{
     char str[100];
-    int c = 0;
-    int w = 0;
+    int i, count = 1;
 
-    gets(str);
+    printf("Enter a string: ");
+    scanf("%[^\n]%*c", str); 
 
-    for (c = 0; str[c] != '\0'; c++) {
-        if (str[c] == ' ') {
-            if (c > 0 && str[c-1] != ' ')
-                w++;
+    for (i = 0; str[i] != '\0'; i++) {
+        if (str[i] == ' ') {
+            count++;
         }
     }
-    if (c>0 && str[c-1] != ' ')
-        w++;
 
-    printf("%d\n", w);
+    printf("Number of words: %d\n", count);
+
     return 0;
 }

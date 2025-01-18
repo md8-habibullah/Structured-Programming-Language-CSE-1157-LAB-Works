@@ -6,28 +6,23 @@ int main()
     printf("Enter the size of the square matrix: ");
     scanf("%d", &n);
 
-    int matrix[n][n];
+    int arr[n][n];
+    int i, j;
 
     printf("Enter the elements of the matrix:\n");
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            scanf("%d", &matrix[i][j]);
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%1d", &arr[i][j]);
         }
     }
 
     printf("Major diagonal: ");
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d ", matrix[i][i]);
+    for (i = 0; i < n; i++) {
+        printf("%d", arr[i][i]);
     }
-    printf("\n");
-
-    printf("Minor diagonal: ");
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d ", matrix[i][n - i - 1]);
+    printf("\nMinor diagonal: ");
+    for (i = 0; i < n; i++) {
+        printf("%d", arr[i][n - 1 - i]);
     }
     printf("\n");
 

@@ -1,39 +1,37 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int m, n;
-
-    printf("Enter the number of rows (m): ");
-    scanf("%d", &m);
-    printf("Enter the number of columns (n): ");
-    scanf("%d", &n);
+    printf("Enter the dimensions of the matrices (m and n): ");
+    scanf("%d %d", &m, &n);
 
     int A[m][n], B[m][n], C[m][n];
+    int i, j;
 
     printf("Enter the elements of matrix A:\n");
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
             scanf("%d", &A[i][j]);
         }
     }
 
     printf("Enter the elements of matrix B:\n");
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
             scanf("%d", &B[i][j]);
         }
     }
 
-    // Calculate C = A + B
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
             C[i][j] = A[i][j] + B[i][j];
         }
     }
 
-    printf("Matrix C:\n");
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
+    printf("\nMatrix C:\n");
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
             printf("%d ", C[i][j]);
         }
         printf("\n");

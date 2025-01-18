@@ -3,41 +3,35 @@
 int main()
 {
     int m, n;
+    printf("Enter m and n: ");
+    scanf("%d %d", &m, &n);
 
-    printf("Enter the number of rows (m): ");
-    scanf("%d", &m);
-    printf("Enter the number of columns (n): ");
-    scanf("%d", &n);
-
-    int matrix[m][n];
+    int arr[m][n];
+    int i, j, max, max_i, max_j;
 
     printf("Enter the elements of the matrix:\n");
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            scanf("%d", &matrix[i][j]);
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &arr[i][j]);
         }
     }
 
-    int max = matrix[0][0];
-    int max_row = 0, max_col = 0;
+    max = arr[0][0];
+    max_i = 0;
+    max_j = 0;
 
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (matrix[i][j] > max)
-            {
-                max = matrix[i][j];
-                max_row = i;
-                max_col = j;
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            if (arr[i][j] > max) {
+                max = arr[i][j];
+                max_i = i;
+                max_j = j;
             }
         }
     }
 
     printf("Max: %d\n", max);
-    printf("Location: [%d][%d]\n", max_row, max_col);
+    printf("Location: [%d][%d]\n", max_i, max_j);
 
     return 0;
 }

@@ -1,17 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    char str[100];
-    int l;
-    int i;
+int main()
+{
+    char str[100], rev[100];
+    int i, len = strlen(str);
 
-    gets(str);
-    l = strlen(str);
+    printf("Enter a string: ");
+    scanf("%s", str);
 
-    for (i = l - 1; i >= 0; i--) {
-        printf("%c", str[i]);
+    for (i = 0; i < len; i++) {
+        rev[i] = str[len - i - 1];
     }
-    printf("\n");
+    rev[len] = '\0';
+
+    printf("Reversed string: %s\n", rev);
+
     return 0;
 }
