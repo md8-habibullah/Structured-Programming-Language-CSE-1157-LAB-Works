@@ -1,21 +1,18 @@
 #include <stdio.h>
-#include <string.h>
 
-int string_length(char str[]) {
-    return strlen(str);
+int string_length(char *str) {
+    int len = 0;
+    while (*str != '\0') {
+        len++;
+        str++;
+    }
+    return len;
 }
 
 int main() {
-    char input1[100];
-    char input2[100];
-
-    printf("Enter a string: ");
-    gets(input1);
-    printf("Length: %d\n", string_length(input1));
-
-    printf("Enter another string: ");
-    gets(input2);
-    printf("Length: %d\n", string_length(input2));
-
+    char str1[] = "hello world";
+    char str2[] = "I love my country";
+    printf("%d\n", string_length(str1));
+    printf("%d\n", string_length(str2));
     return 0;
 }

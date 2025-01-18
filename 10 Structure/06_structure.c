@@ -1,31 +1,18 @@
 #include <stdio.h>
-#include <string.h>
 
-struct student {
+struct Student {
     char name[50];
-    char id[20];
+    char id[10];
     float cgpa;
 };
 
 int main() {
-    struct student s;
-
-    printf("Enter student name: ");
-    fgets(s.name, sizeof(s.name), stdin);
-    s.name[strcspn(s.name, "\n")] = 0;
-
-    printf("Enter student ID: ");
-    fgets(s.id, sizeof(s.id), stdin);
-    s.id[strcspn(s.id, "\n")] = 0;
-
-    printf("Enter student CGPA: ");
-    scanf("%f", &s.cgpa);
-    while(getchar() != '\n');
-
-    printf("\nStudent Information:\n");
-    printf("Name: %s\n", s.name);
-    printf("ID: %s\n", s.id);
-    printf("CGPA: %.2f\n", s.cgpa);
-
+    struct Student s1;
+    printf("Enter name: ");
+    scanf("%s", s1.name);
+    printf("Enter ID: ");
+    scanf("%s", s1.id);
+    printf("Enter CGPA: ");
+    scanf("%f", &s1.cgpa);
     return 0;
 }

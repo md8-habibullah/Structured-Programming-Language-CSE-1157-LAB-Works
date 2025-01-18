@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void swap_by_value(int a, int b) {
+void swap_values(int a, int b) {
     int temp = a;
     a = b;
     b = temp;
@@ -8,12 +8,8 @@ void swap_by_value(int a, int b) {
 }
 
 int main() {
-    int x = 10;
-    int y = 20;
-
+    int x = 10, y = 20;
+    swap_values(x, y);
     printf("Value in main: %d %d\n", x, y);
-    swap_by_value(x, y);
-    printf("Value in main: %d %d\n", x, y);
-
     return 0;
 }

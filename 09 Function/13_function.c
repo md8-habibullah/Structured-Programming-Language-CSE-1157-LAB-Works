@@ -1,19 +1,15 @@
 #include <stdio.h>
 
-void swap_by_reference(int *a, int *b) {
+void swap_references(int *a, int *b) {
     int temp = *a;
     *a = *b;
     *b = temp;
-    printf("Value in func: %d %d\n", *a, *b);
 }
 
 int main() {
-    int x = 10;
-    int y = 20;
-
+    int x = 10, y = 20;
+    swap_references(&x, &y);
+    printf("Value in func: %d %d\n", x, y);
     printf("Value in main: %d %d\n", x, y);
-    swap_by_reference(&x, &y);
-    printf("Value in main: %d %d\n", x, y);
-
     return 0;
 }

@@ -1,22 +1,16 @@
 #include <stdio.h>
-#include <string.h>
 
-struct student {
+struct Student {
     char name[50];
-    char id[20];
+    char id[10];
     float cgpa;
 };
 
 int main() {
-    struct student s;
-
-    strcpy(s.name, "Jane Smith");
-    strcpy(s.id, "20221234");
-    s.cgpa = 3.5f;
-
-    printf("Name: %s\n", s.name);
-    printf("ID: %s\n", s.id);
-    printf("CGPA: %.2f\n", s.cgpa);
-
+    struct Student s1;
+    s1.name[0] = '\0';
+    strcpy(s1.name, "Jane Smith"); 
+    strcpy(s1.id, "67890");
+    s1.cgpa = 3.75;
     return 0;
 }

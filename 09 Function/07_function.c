@@ -1,27 +1,30 @@
 #include <stdio.h>
 
-int sum_of_numbers_in_array(int n) {
-    int numbers[n];
-    int sum = 0;
-    int i;
-
-    printf("Enter %d numbers:\n", n);
+int sum_of_array(int arr[], int n) {
+    int i, sum = 0;
     for (i = 0; i < n; i++) {
-        scanf("%d", &numbers[i]);
-        sum += numbers[i];
+        sum += arr[i];
     }
     return sum;
 }
 
 int main() {
-    int num_count, total_sum;
+    int n, i, sum_in_main;
+    printf("Enter the number of numbers: ");
+    scanf("%d", &n);
+    int arr[n];
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    printf("Sum In Function: %d\n", sum_of_array(arr, n));
 
-    printf("Enter the number of integers you want to sum:\n");
-    scanf("%d", &num_count);
-
-    total_sum = sum_of_numbers_in_array(num_count);
-    printf("Sum In Function: %d\n", total_sum);
-    printf("Sum In Main: %d\n", total_sum);
-
+    printf("Enter the number of numbers: ");
+    scanf("%d", &n);
+    int arr2[n];
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr2[i]);
+    }
+    sum_in_main = sum_of_array(arr2, n);
+    printf("Sum In Main: %d\n", sum_in_main);
     return 0;
 }

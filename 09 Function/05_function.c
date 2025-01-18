@@ -14,6 +14,5 @@ int main() {
     compare_numbers(5, 4);
     compare_numbers(2, 6);
     compare_numbers(8, 8);
-
     return 0;
 }

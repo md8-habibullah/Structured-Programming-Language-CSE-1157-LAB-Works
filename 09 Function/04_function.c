@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void check_positive_negative_zero(int num) {
+void number_sign(int num) {
     if (num > 0) {
         printf("positive\n");
     } else if (num < 0) {
@@ -11,13 +11,8 @@ void check_positive_negative_zero(int num) {
 }
 
 int main() {
-    int input1 = 3;
-    int input2 = -5;
-    int input3 = 0;
-
-    check_positive_negative_zero(input1);
-    check_positive_negative_zero(input2);
-    check_positive_negative_zero(input3);
-
+    number_sign(3);
+    number_sign(-5);
+    number_sign(0);
     return 0;
 }

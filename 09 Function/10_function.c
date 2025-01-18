@@ -1,18 +1,21 @@
 #include <stdio.h>
-#include <math.h>
 
-void calculate_power(int x, int y) {
-    if (x < 0 || y < 0) {
-        printf("Inputs must be non-negative.\n");
-        return;
+int power(int x, int y) {
+    if (y == 0) {
+        return 1;
+    } else {
+        return x * power(x, y - 1);
     }
-    double result = pow(x, y);
-    printf("%d to the power %d is %.0lf\n", x, y, result);
 }
 
 int main() {
-    calculate_power(3, 4);
-    calculate_power(10, 3);
-    calculate_power(-2, 3);
+    int x, y;
+    printf("Enter x and y: ");
+    scanf("%d %d", &x, &y);
+    printf("%d to the power %d is %d\n", x, y, power(x, y));
+
+    printf("Enter x and y: ");
+    scanf("%d %d", &x, &y);
+    printf("%d to the power %d is %d\n", x, y, power(x, y));
     return 0;
 }

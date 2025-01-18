@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void check_even_odd(int num) {
+void even_or_odd(int num) {
     if (num % 2 == 0) {
         printf("even\n");
     } else {
@@ -9,11 +9,7 @@ void check_even_odd(int num) {
 }
 
 int main() {
-    int input1 = 3;
-    int input2 = 8;
-
-    check_even_odd(input1);
-    check_even_odd(input2);
-
+    even_or_odd(3);
+    even_or_odd(8);
     return 0;
 }

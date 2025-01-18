@@ -1,39 +1,29 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int* f16(int a[], int n) {
-    int* b = (int*)malloc(n * sizeof(int));
-    if (b == NULL) {
-        perror("Memory allocation failed");
-        exit(1);
-    }
-
+void multiply_by_2(int arr[], int n) {
     for (int i = 0; i < n; i++) {
-        b[i] = a[i] * 2;
+        arr[i] *= 2;
     }
-    return b;
 }
 
 int main() {
-    int a1[] = {157, -28, -37, 26, 10};
-    int n1 = sizeof(a1) / sizeof(a1[0]);
-    int* b1 = f16(a1, n1);
+    int arr1[] = {15, 7, -28, 26, 10};
+    int arr2[] = {12, 45, 1, 10, 5, 3, 22};
+    int n1 = sizeof(arr1) / sizeof(arr1[0]);
+    int n2 = sizeof(arr2) / sizeof(arr2[0]);
 
-    printf("Multiplied array 1: ");
-    for(int i = 0; i < n1; i++)
-        printf("%d ", b1[i]);
+    multiply_by_2(arr1, n1);
+    multiply_by_2(arr2, n2);
+
+    for (int i = 0; i < n1; i++) {
+        printf("%d ", arr1[i]);
+    }
     printf("\n");
-    free(b1);
 
-    int a2[] = {12, 45, 1, 10, 5, 3, 22};
-    int n2 = sizeof(a2) / sizeof(a2[0]);
-    int* b2 = f16(a2, n2);
-
-    printf("Multiplied array 2: ");
-    for(int i = 0; i < n2; i++)
-        printf("%d ", b2[i]);
+    for (int i = 0; i < n2; i++) {
+        printf("%d ", arr2[i]);
+    }
     printf("\n");
-    free(b2);
 
     return 0;
 }
