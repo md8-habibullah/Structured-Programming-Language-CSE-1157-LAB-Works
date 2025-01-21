@@ -11,5 +11,8 @@
 
 
 Faculty Details : 
-Sezan Sir
-mdsezanmahmudsaikat@gmail.com
+Md. Sezan Mahmud Saikat
+Designation: Lecturer
+Department: Computer Science & Engineering
+Mobile: 01683603049
+E-mail: mdsezanmahmudsaikat@gmail.com
