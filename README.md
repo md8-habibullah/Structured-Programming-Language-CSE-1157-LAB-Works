@@ -16,3 +16,5 @@ Designation: Lecturer
 Department: Computer Science & Engineering
 Mobile: 01683603049
 E-mail: mdsezanmahmudsaikat@gmail.com
+
+by_ https://nub.ac.bd/pims/faculty-member/j0dptwet/md.-sezan-mahmud-saikat
